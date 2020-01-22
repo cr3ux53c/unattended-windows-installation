@@ -8,7 +8,7 @@
                     <PlainText>false</PlainText>
                 </Password>
                 <LogonCount>1</LogonCount>
-                <Username>User</Username>
+                <Username>Administrator</Username>
                 <Enabled>true</Enabled>
             </AutoLogon>
             <OOBE>
@@ -18,20 +18,25 @@
                 <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
                 <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
                 <NetworkLocation>Work</NetworkLocation>
+                <ProtectYourPC>3</ProtectYourPC>
                 <SkipMachineOOBE>true</SkipMachineOOBE>
             </OOBE>
             <UserAccounts>
-                <LocalAccounts>
-                    <LocalAccount wcm:action="add">
-                        <Password>
-                            <Value>UABhAHMAcwB3AG8AcgBkAA==</Value>
-                            <PlainText>false</PlainText>
-                        </Password>
-                        <Group>Administrators</Group>
-                        <Name>User</Name>
-                    </LocalAccount>
-                </LocalAccounts>
+                <AdministratorPassword>
+                    <Value>QQBkAG0AaQBuAGkAcwB0AHIAYQB0AG8AcgBQAGEAcwBzAHcAbwByAGQA</Value>
+                    <PlainText>false</PlainText>
+                </AdministratorPassword>
             </UserAccounts>
+            <ClientApplications>
+                <Media>PotPlayer64</Media>
+                <Mail>Chrome</Mail>
+                <Internet>Chrome</Internet>
+            </ClientApplications>
+            <OEMInformation>
+                <Manufacturer>한국교통대학교 소프트웨어학과</Manufacturer>
+                <Model>Sysprep for KNUT Dept. of Software 2020 (2020-01-23)</Model>
+                <SupportPhone>+82 43-841-5851</SupportPhone>
+            </OEMInformation>
         </component>
     </settings>
     <settings pass="specialize">
@@ -39,7 +44,9 @@
             <ProductKey>Q8RHN-3PHK9-PD8BP-23HQC-D69TY</ProductKey>
             <TimeZone>Korea Standard Time</TimeZone>
             <CopyProfile>true</CopyProfile>
+            <RegisteredOrganization>한국교통대학교</RegisteredOrganization>
+            <RegisteredOwner>소프트웨어학과</RegisteredOwner>
         </component>
     </settings>
-    <cpi:offlineImage cpi:source="wim:c:/users/administrator/downloads/ko_windows_10_consumer_edition_version_1809_updated_sept_2018_x64_dvd_312b1bc6/sources/install.wim#Windows 10 Pro" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+    <cpi:offlineImage cpi:source="catalog:c:/users/administrator/downloads/install_windows 10 pro.clg" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 </unattend>

@@ -35,3 +35,4 @@ echo Setting up bootloader...
 echo.
 echo ============================================================
 bcdboot W:\windows /l ko-kr /s S:
+exit

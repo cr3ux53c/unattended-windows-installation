@@ -7,7 +7,7 @@
                     <Value>UABhAHMAcwB3AG8AcgBkAA==</Value>
                     <PlainText>false</PlainText>
                 </Password>
-                <LogonCount>1</LogonCount>
+                <LogonCount>5</LogonCount>
                 <Username>Administrator</Username>
                 <Enabled>true</Enabled>
             </AutoLogon>
@@ -17,7 +17,6 @@
                 <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
                 <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
                 <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
-                <NetworkLocation>Work</NetworkLocation>
                 <ProtectYourPC>3</ProtectYourPC>
                 <SkipMachineOOBE>true</SkipMachineOOBE>
             </OOBE>
@@ -26,27 +25,50 @@
                     <Value>QQBkAG0AaQBuAGkAcwB0AHIAYQB0AG8AcgBQAGEAcwBzAHcAbwByAGQA</Value>
                     <PlainText>false</PlainText>
                 </AdministratorPassword>
+                <!-- <LocalAccounts>
+                    <LocalAccount wcm:action="add">
+                        <Password>
+                            <Value>UABhAHMAcwB3AG8AcgBkAA==</Value>
+                            <PlainText>false</PlainText>
+                        </Password>
+                        <Group>Administrators</Group>
+                        <Name>User</Name>
+                    </LocalAccount>
+                </LocalAccounts> -->
             </UserAccounts>
-            <ClientApplications>
-                <Media>PotPlayer64</Media>
-                <Mail>Chrome</Mail>
-                <Internet>Chrome</Internet>
-            </ClientApplications>
-            <OEMInformation>
-                <Manufacturer>한국교통대학교 소프트웨어학과</Manufacturer>
-                <Model>Sysprep for KNUT Dept. of Software 2020 (2020-01-23)</Model>
-                <SupportPhone>+82 43-841-5851</SupportPhone>
-            </OEMInformation>
+            <FirstLogonCommands>
+                <SynchronousCommand wcm:action="add">
+                    <Order>1</Order>
+                    <CommandLine>Dism /Online /NoRestart /add-package /packagepath:%windir%\Setup\Professional-x64.cab</CommandLine>
+                    <Description>Change Windows Edition to Pro</Description>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>Slmgr.vbs -ipk [YOUR-PRODUCT-KEY]</CommandLine>
+                    <Description>Apply Volume License</Description>
+                    <Order>2</Order>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>shutdown /s /t 1800</CommandLine>
+                    <Description>Reserve system shutdown</Description>
+                    <Order>3</Order>
+                </SynchronousCommand>
+            </FirstLogonCommands>
         </component>
     </settings>
     <settings pass="specialize">
         <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ProductKey>Q8RHN-3PHK9-PD8BP-23HQC-D69TY</ProductKey>
+            <!-- <ProductKey>[YOUR-KMS-KEY]</ProductKey> -->
             <TimeZone>Korea Standard Time</TimeZone>
             <CopyProfile>true</CopyProfile>
+            <OEMInformation>
+                <Manufacturer>한국교통대학교 소프트웨어학과</Manufacturer>
+                <SupportPhone>+82 43-841-5851</SupportPhone>
+                <SupportURL>https://www.ut.ac.kr/ceit/sub03_00.do</SupportURL>
+                <Logo>%windir%\oemlogo.bmp</Logo>
+                <Model>Sysprep for Windows 10 1809 LTSC (Updated 2020-01-28)</Model>
+            </OEMInformation>
             <RegisteredOrganization>한국교통대학교</RegisteredOrganization>
             <RegisteredOwner>소프트웨어학과</RegisteredOwner>
         </component>
     </settings>
-    <cpi:offlineImage cpi:source="catalog:c:/users/administrator/downloads/install_windows 10 pro.clg" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 </unattend>

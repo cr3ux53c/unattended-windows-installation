@@ -17,7 +17,7 @@ set /p serverIpAddress=<X:\Windows\wds_server_ip.log
 echo Connecting to PXE Server network directory...
 net use N: \\%serverIpAddress%\PXEShare /user:WDSUser 6dEYN2HTvJ63xqkS
 echo Load WDS script...
-start /b /wait N:\autounattend.cmd
+start /b /wait N:\autounattend.cmd N
 exit
 
 :USBBoot

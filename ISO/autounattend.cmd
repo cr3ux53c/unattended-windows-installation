@@ -50,12 +50,23 @@ echo.
 echo ============================================================
 bcdboot W:\windows /l ko-kr /s S: /f BIOS
 
+::echo.
+::echo ============================================================
+::echo.
+::echo The system will be rebooted soon.
+::echo.
+::echo ============================================================
+::color 5F
+::cscript //nologo %1:\sources\sleep.vbs
+::exit
+
 echo.
 echo ============================================================
 echo.
-echo The system will be rebooted soon.
+echo Windows image extration is complete.
+echo Please boot to Local bootloader, not USB or PXE.
 echo.
 echo ============================================================
 color 5F
-cscript //nologo %1:\sources\sleep.vbs
+pause
 exit

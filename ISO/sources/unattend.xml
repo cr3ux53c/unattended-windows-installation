@@ -43,21 +43,26 @@
                     <Description>Change Windows Edition to Pro</Description>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>cscript //B %windir%\System32\Slmgr.vbs -ipk [YOUR-PRODUCT-KEY]</CommandLine>
-                    <Description>Apply Volume License</Description>
+                    <CommandLine>cscript //B %windir%\System32\Slmgr.vbs -ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX</CommandLine>
+                    <Description>Apply Volume License for Windows</Description>
                     <Order>2</Order>
                 </SynchronousCommand>
-                 <SynchronousCommand wcm:action="add">
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cscript //B "%systemdrive%\Program Files\Microsoft Office\Office16\OSPP.VBS" /inpkey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX</CommandLine>
+                    <Description>Apply Volume License for Office</Description>
+                    <Order>3</Order>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
                     <CommandLine>shutdown /s /t 1800</CommandLine>
                     <Description>Reserve system shutdown</Description>
-                    <Order>3</Order>
+                    <Order>4</Order>
                 </SynchronousCommand>
             </FirstLogonCommands>
         </component>
     </settings>
     <settings pass="specialize">
         <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-             <!-- <ProductKey>[YOUR-KMS-KEY]</ProductKey> -->
+             <!-- <ProductKey>XXXXX-XXXXX-XXXXX-XXXXX-XXXXX</ProductKey> -->
              <TimeZone>Korea Standard Time</TimeZone>
             <CopyProfile>true</CopyProfile>
             <OEMInformation>

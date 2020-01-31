@@ -48,14 +48,19 @@
                     <Order>2</Order>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>cscript //B "%systemdrive%\Program Files\Microsoft Office\Office16\OSPP.VBS" /inpkey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX</CommandLine>
-                    <Description>Apply Volume License for Office</Description>
+                    <CommandLine>cscript //B "%programfiles%\Microsoft Office\Office16\OSPP.VBS" /inpkey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX</CommandLine>
+                    <Description>Input Volume License key for Office</Description>
                     <Order>3</Order>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cscript //B "%programfiles%\Microsoft Office\Office16\OSPP.VBS" /act</CommandLine>
+                    <Description>Activate License for Office</Description>
+                    <Order>4</Order>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>shutdown /s /t 1800</CommandLine>
                     <Description>Reserve system shutdown</Description>
-                    <Order>4</Order>
+                    <Order>5</Order>
                 </SynchronousCommand>
             </FirstLogonCommands>
         </component>
@@ -70,7 +75,7 @@
                 <SupportPhone>+82 43-841-5851</SupportPhone>
                 <SupportURL>https://www.ut.ac.kr/ceit/sub03_00.do</SupportURL>
                 <Logo>%windir%\oemlogo.bmp</Logo>
-                <Model>Sysprep for Windows 10 1809 LTSC (Updated 2020-01-28)</Model>
+                <Model>Sysprep for Windows 10 1809 LTSC (Updated 2020-01-30)</Model>
             </OEMInformation>
             <RegisteredOrganization>한국교통대학교</RegisteredOrganization>
             <RegisteredOwner>소프트웨어학과</RegisteredOwner>

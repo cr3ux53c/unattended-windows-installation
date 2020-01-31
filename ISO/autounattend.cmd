@@ -2,8 +2,8 @@
 
 :: Set Installation Environment
 set filePriority=wim esd swm
-set isUEFI=0
-set diskpartCfg=standard
+set isUEFI=1
+set diskpartCfg=32
 set pauseWhenFinished=1
 set index=1
 
@@ -11,9 +11,10 @@ set index=1
 for %%ext in (%filePriority%) do (
     if exist %1:\sources\install.%%ext (
         set installFileName=install.%%ext
-        goto END_SET_ENVVAR
+        goto BREAK_FOR
     )
 )
+:BREAK_FOR
 if %isUEFI%=="0" (
     set systemMode=mbr
 ) else (
